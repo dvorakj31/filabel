@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filabel</title>
+</head>
+<body>
+    {% if username %}
+        <h1>Hello {{ username }}</h1>
+
+    {% else %}
+        <h1>Check your github configuration!</h1>
+    {% endif %}
+    {% if labels %}
+        <p>Your labels config is:</p>
+        {% for label in labels %}
+            <p>label name = {{ label }}</p>
+            <p>"{{ label }}" label rules are:</p>
+            {% set rules = labels[label].split('\n') %}
+            {% for rule in rules %}
+                <p style="padding-left: 30px">{{ rule }}</p>
+            {% endfor %}
+            <p>------------------------------------</p>
+        {% endfor %}
+    {% else %}
+        <p>Config files are not specified!</p>
+    {% endif %}
+</body>
+</html>
