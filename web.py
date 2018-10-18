@@ -31,7 +31,9 @@ def webhook_handler():
         try:
             if not hmac.compare_digest(control_hash, request.headers['X-Hub-Signature']):
                 return 'Illegal operation', 403
-            if request.json['action'] != 'labeled' and request.json['action'] != 'unlabeled':
+            if request.headers['X-GitHub-Event'] == 'ping':
+                return '', 200
+            elif request.headers['X-GitHub-Event'] =='pull_request' and request.json['action'] != 'labeled' and request.json['action'] != 'unlabeled':
                 helper_functions.label_pr(GithubCom(token), request.json['repository']['full_name'],
                                           request.json['pull_request'], conf['labels'])
             else:
