@@ -13,18 +13,18 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-try:
-    conf = configparser.ConfigParser()
-    conf.read(os.environ['FILABEL_CONFIG'].split(':'))
-    token = conf['github']['token']
-    secret = conf['github']['secret']
-except (configparser.Error, KeyError):
-    click.echo('Wrong configuration', err=True)
-    sys.exit(1)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def webhook_handler():
+    try:
+        conf = configparser.ConfigParser()
+        conf.read(os.environ['FILABEL_CONFIG'].split(':'))
+        token = conf['github']['token']
+        secret = conf['github']['secret']
+    except (configparser.Error, KeyError):
+        click.echo('Wrong configuration', err=True)
+        sys.exit(1)
     if request.method == 'POST':
         control_hash = 'sha1=' + hmac.HMAC(bytearray(secret, encoding='UTF-8'), request.data,
                                            digestmod=hashlib.sha1).hexdigest()

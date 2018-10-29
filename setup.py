@@ -39,7 +39,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'filabel = filabel:main',
+            'filabel = filabel.filabel:main',
         ]
     },
     package_data={

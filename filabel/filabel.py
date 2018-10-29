@@ -3,7 +3,6 @@ import configparser
 import sys
 import filabel.helper_functions
 from filabel.github_handler import GithubCom
-from filabel.web import app
 
 
 @click.command()
@@ -43,8 +42,3 @@ def main(state, delete_old, branch, config_auth, config_labels, reposlugs):
         sys.exit(1)
     gh = GithubCom(token)
     helper_functions.label_data(gh, state, branch, delete_old, reposlugs, labels)
-
-
-if __name__ == '__main__':
-    main()
-
