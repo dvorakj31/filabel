@@ -1,15 +1,21 @@
 from setuptools import setup, find_packages
 
 
+with open('README') as f:
+    long_description = ''.join(f.readlines())
+
+
 setup(
     name='filabel_dvoraj84',
     version='0.3',
     description='Labels pull requests on github',
+    long_description=long_description,
     author='Jakub Dvořák',
     author_email='dvoraj84@fit.cvut.cz',
     license='MIT',
     url='https://github.com/dvorakj31/filabel',
     packages=find_packages(),
+    keywords=['pull requests', 'github', 'labeling', 'flask', 'console'],
     classifiers=[
         'Environment :: Console',
         'Environment :: Web Environment',

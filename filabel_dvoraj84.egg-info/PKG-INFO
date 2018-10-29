@@ -6,7 +6,16 @@ Home-page: https://github.com/dvorakj31/filabel
 Author: Jakub Dvořák
 Author-email: dvoraj84@fit.cvut.cz
 License: MIT
-Description: UNKNOWN
+Description: Introduction
+        ============
+        
+        This is simple console application, that labels your pull requests on github. Application can be started as flask app.
+        
+        Installation
+        ------------
+        
+        Install this module via pip - python -m pip install --extra-index-url https://test.pypi.org/pypi filabel_dvoraj84.
+Keywords: pull requests,github,labeling,flask,console
 Platform: UNKNOWN
 Classifier: Environment :: Console
 Classifier: Environment :: Web Environment
