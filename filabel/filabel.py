@@ -27,7 +27,6 @@ def main(state, delete_old, branch, config_auth, config_labels, reposlugs):
         click.echo('Labels configuration not supplied!', err=True)
         sys.exit(1)
     try:
-        print('config:', config_auth)
         token = filabel.helper_functions.get_auth_conf(config_auth)
     except(KeyError, configparser.Error):
         click.echo('Auth configuration not usable!', err=True)
