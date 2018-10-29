@@ -34,7 +34,7 @@ def webhook_handler():
             if request.headers['X-GitHub-Event'] == 'ping':
                 return '', 200
             elif request.headers['X-GitHub-Event'] =='pull_request' and request.json['action'] != 'labeled' and request.json['action'] != 'unlabeled':
-                helper_functions.label_pr(GithubCom(token), request.json['repository']['full_name'],
+                filabel.helper_functions.label_pr(GithubCom(token), request.json['repository']['full_name'],
                                           request.json['pull_request'], conf['labels'])
             else:
                 return '', 501

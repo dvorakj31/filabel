@@ -7,7 +7,7 @@ with open('README') as f:
 
 setup(
     name='filabel_dvoraj84',
-    version='0.3',
+    version='0.3.1',
     description='Labels pull requests on github',
     long_description=long_description,
     author='Jakub Dvořák',

@@ -27,16 +27,16 @@ def main(state, delete_old, branch, config_auth, config_labels, reposlugs):
         click.echo('Labels configuration not supplied!', err=True)
         sys.exit(1)
     try:
-        token = helper_functions.get_auth_conf(config_auth)
+        token = filabel.helper_functions.get_auth_conf(config_auth)
     except(KeyError, configparser.Error):
         click.echo('Auth configuration not usable!', err=True)
         sys.exit(1)
     try:
-        labels = helper_functions.get_labels(config_labels)
+        labels = filabel.helper_functions.get_labels(config_labels)
     except(KeyError, configparser.Error):
         click.echo('Labels configuration not usable!', err=True)
         sys.exit(1)
-    invalid_reposlug = helper_functions.get_invalid_reposlug(reposlugs)
+    invalid_reposlug = filabel.helper_functions.get_invalid_reposlug(reposlugs)
     if invalid_reposlug:
         click.echo(f'Reposlug {invalid_reposlug} not valid!', err=True)
         sys.exit(1)
