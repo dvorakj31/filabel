@@ -15,7 +15,7 @@ setup(
     license='MIT',
     url='https://github.com/dvorakj31/filabel',
     packages=find_packages(),
-    keywords=['pull requests', 'github', 'labeling', 'flask', 'console'],
+    keywords='pull requests github labeling flask console',
     classifiers=[
         'Environment :: Console',
         'Environment :: Web Environment',

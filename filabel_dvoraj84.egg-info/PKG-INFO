@@ -15,7 +15,7 @@ Description: Introduction
         ------------
         
         Install this module via pip - python -m pip install --extra-index-url https://test.pypi.org/pypi filabel_dvoraj84.
-Keywords: pull requests,github,labeling,flask,console
+Keywords: pull requests github labeling flask console
 Platform: UNKNOWN
 Classifier: Environment :: Console
 Classifier: Environment :: Web Environment
