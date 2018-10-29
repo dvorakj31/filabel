@@ -5,8 +5,8 @@ import hmac
 import sys
 import os
 import requests
-import helper_functions
-from github_handler import GithubCom
+import filabel.helper_functions
+from filabel.github_handler import GithubCom
 from flask import Flask, request, render_template
 
 

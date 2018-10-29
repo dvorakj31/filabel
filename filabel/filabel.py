@@ -1,8 +1,9 @@
 import click
 import configparser
 import sys
-import helper_functions
-from github_handler import GithubCom
+import filabel.helper_functions
+from filabel.github_handler import GithubCom
+from filabel.web import app
 
 
 @click.command()
@@ -46,5 +47,4 @@ def main(state, delete_old, branch, config_auth, config_labels, reposlugs):
 
 if __name__ == '__main__':
     main()
-else:
-    from web import app
+
