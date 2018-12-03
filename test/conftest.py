@@ -20,6 +20,7 @@ def github_com(betamax_session):
 
 @pytest.fixture
 def client():
+    web.app.config['TESTING'] = True
     return web.app.test_client()
 
 

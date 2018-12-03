@@ -16,6 +16,8 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def webhook_handler():
     try:
+        if app.config.get('TESTING', None) and not os.environ.get('FILABEL_CONFIG', None):
+            os.environ['FILABEL_CONFIG'] = 'auth.example.cfg:label.example.cfg'
         conf = configparser.ConfigParser()
         conf.read(os.environ['FILABEL_CONFIG'].split(':'))
         token = conf['github']['token']
