@@ -1,9 +1,0 @@
-Introduction
-============
-
-This is simple console application, that labels your pull requests on github. Application can be started as flask app.
-
-Installation
-------------
-
-Install this module via pip - python -m pip install --extra-index-url https://test.pypi.org/pypi filabel_dvoraj84.
