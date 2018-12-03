@@ -7,5 +7,3 @@ Installation
     - Download repository
     - Unpack downloaded archive
     - Run ``python setup.py install``
-
-3.

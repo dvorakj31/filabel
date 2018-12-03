@@ -76,3 +76,5 @@ Label config file has one section ``[labels]``
     - For example see label.example.cfg
 
     - If you leave value empty and specify only key, then if this label name is found, it will be deleted.
+
+Labels file path is specified with ``-l, --config-labels labels_file_path`` option.
