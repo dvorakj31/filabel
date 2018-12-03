@@ -1,6 +1,5 @@
 Introduction
 ============
-|license| |travis| |pypi|
 
 This is simple console application, that labels your pull requests on github. Application can be started as flask app.
 
@@ -9,6 +8,7 @@ Installation
 
 1.  Install this module via pip - ``python -m pip install --extra-index-url https://test.pypi.org/pypi filabel_dvoraj84``.
 2.  Install this module manually via github
+
     - Download repository
     - Unpack downloaded archive
     - Run ``python setup.py install``
