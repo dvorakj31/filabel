@@ -13,8 +13,6 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 
-
-
 @app.route('/', methods=['GET', 'POST'])
 def webhook_handler():
     try:
@@ -33,9 +31,10 @@ def webhook_handler():
                 return 'Illegal operation', 403
             if request.headers['X-GitHub-Event'] == 'ping':
                 return '', 200
-            elif request.headers['X-GitHub-Event'] =='pull_request' and request.json['action'] != 'labeled' and request.json['action'] != 'unlabeled':
+            elif request.headers['X-GitHub-Event'] == 'pull_request' and request.json['action'] != 'labeled' and \
+                    request.json['action'] != 'unlabeled':
                 filabel.helper_functions.label_pr(GithubCom(token), request.json['repository']['full_name'],
-                                          request.json['pull_request'], conf['labels'])
+                                                  request.json['pull_request'], conf['labels'])
             else:
                 return '', 501
         except KeyError:

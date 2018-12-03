@@ -9,9 +9,9 @@ class GithubCom:
 
     _GH_ENDPOINT = 'https://api.github.com'
 
-    def __init__(self, token):
+    def __init__(self, token, session=None):
         self._token = token
-        self._session = requests.Session()
+        self._session = session or requests.Session()
         self._session.headers = {'User-Agent': 'Python'}
         self._session.auth = self._token_auth
 
