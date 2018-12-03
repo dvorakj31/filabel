@@ -36,7 +36,9 @@ setup(
         'colorama',
         'Flask',
         'requests',
+        'pytest-runner'
     ],
+    tests_require=['pytest', 'betamax'],
     entry_points={
         'console_scripts': [
             'filabel = filabel.filabel:main',

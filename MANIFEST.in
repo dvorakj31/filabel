@@ -1,3 +1,4 @@
 include LICENSE
 include auth.example.cfg
 include label.example.cfg
+recursive-include test *
