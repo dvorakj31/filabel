@@ -1,0 +1,6 @@
+
+click
+colorama
+Flask
+requests
+pytest

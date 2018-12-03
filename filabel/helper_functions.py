@@ -5,24 +5,28 @@ import configparser
 import click
 
 
-"""
-Here starts auxiliary functions for validation of input and main functionality of the filabel application
-"""
-
-
 def get_auth_conf(conf_path):
+    """
+    This function gets token
+    """
     auth_config = configparser.ConfigParser()
     auth_config.read(conf_path.split(':'))
     return auth_config['github']['token']
 
 
 def get_labels(labels_path):
+    """
+    This function gets labels
+    """
     labels_config = configparser.ConfigParser()
     labels_config.read(labels_path.split(':'))
     return labels_config['labels']
 
 
 def get_invalid_reposlug(reposlugs):
+    """
+    Checks invalid reposlug
+    """
     for x in reposlugs:
         if len(x.split('/', 1)) != 2 or '' in x.split('/'):
             return x
@@ -80,6 +84,9 @@ def _label_prs(gh, repo, prs, delete_old, labels):
 
 
 def label_data(gh, state, branch, delete_old, reposlugs, labels):
+    """
+    This function handles labeling data
+    """
     for repo in reposlugs:
         repo_line = Style.BRIGHT + 'REPO' + Style.RESET_ALL + f' {repo}' + ' - ' + Style.BRIGHT
         try:
@@ -95,4 +102,7 @@ def label_data(gh, state, branch, delete_old, reposlugs, labels):
 
 
 def label_pr(gh, repo, pr, labels):
+    """
+    Function that helps to label Pull Requests
+    """
     _label_prs(gh, repo, [pr], True, labels)

@@ -15,6 +15,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def webhook_handler():
+    """
+    One and only function for web interface, that controls config variables and webhooks
+    """
     try:
         if app.config.get('TESTING', None) and not os.environ.get('FILABEL_CONFIG', None):
             os.environ['FILABEL_CONFIG'] = 'auth.example.cfg:label.example.cfg'
